@@ -1,0 +1,15 @@
+.navStyle{
+    background-color: #ffffffa1 !important;
+    margin: 0 !important;
+    z-index: 99999;
+    width: 100%;
+}
+.besthikes{
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: cursive;
+    font-variant: petite-caps;
+}
+.navbar-collapse{
+width:100%;
+}

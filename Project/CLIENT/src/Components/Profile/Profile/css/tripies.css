@@ -1,0 +1,17 @@
+.container-tripies{
+    height: 720px;
+    background-color: #E9EBEE;
+    /* margin-left: 5%; */
+    /* margin-right: 5%; */
+    border-radius: 10px;
+    padding: 5%;
+    font-size: 120px;
+    color: black;
+    text-align: center;
+    margin-top: 2%;
+    width: 55%;
+}
+.mother-container{
+    display: flex;
+    flex-direction: row;
+}

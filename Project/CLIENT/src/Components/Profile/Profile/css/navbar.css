@@ -1,0 +1,41 @@
+.navbar-profil {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin:5% 5%;
+  border-top: 4px solid #eee;
+  border-bottom: 4px solid #eee;
+  background-color: #76B38F;
+}
+
+.navbar-profil-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 55%;
+  font-size: 24px;
+  align-items: center;
+}
+.navbar-profil-right {
+  display: flex;
+  flex-direction: row;
+  padding-right: 20px;
+  justify-content: flex-end;
+  width: 30%;
+}
+.navbar-profil-link {
+  text-decoration: none;
+  color: white;
+}
+.navbar-profil-link:hover {
+  border-bottom: 4px solid #eee;
+  color: #eee;
+  text-decoration: none;
+}
+.navbar-profil-btn {
+  border: none;
+  background: transparent;
+  width: 60px;
+  height: 60px;
+  font-size: 40px;
+}

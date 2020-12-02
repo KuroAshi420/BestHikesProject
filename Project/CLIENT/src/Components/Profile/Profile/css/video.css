@@ -1,0 +1,24 @@
+.container-videos{
+  
+        
+    background-color: #E9EBEE;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 20px;
+    padding: 3%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.box-video{
+width: 43% ;
+height: 350px;
+margin-top: 2%;
+box-shadow: 5px 10px 8px #888888;
+}
+.video{
+    height: 100%;
+    width: 100%;
+}
