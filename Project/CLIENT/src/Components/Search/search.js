@@ -106,14 +106,14 @@ const Search = (props) => {
                 <FormHelperText>Select a Date</FormHelperText>
               </FormControl>
               <center>
-                <Input type="submit" value="Search" color="secondary" style={{color:"green"}}/>
+                <Input type="submit" value="Search" color="secondary" style={{color:"#5DB0D0"}}/>
               </center>
             </form>
           </div>
         </div>
       </div>
       {/* <h4 style={{ color: "white",fontSize:"40px", fontWeight:"bold" }}>Resultat of Search</h4> */}
-      <h2 class="ui icon header" style={{color:"#D9534F"}}>   <i aria-hidden="true" class="search icon" ></i>   Search Result   </h2>
+      <h2 class="ui icon header" style={{color:'#66C6BF'}}>   <i aria-hidden="true" class="search icon" ></i>   Search Result   </h2>
       <div className="container">
         <div className="card border-0 shadow my-5"
         style={{ backgroundColor: "#ffffffa1" }}>

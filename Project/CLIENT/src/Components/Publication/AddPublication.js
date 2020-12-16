@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
+import PhotoSizeSelectActualIcon from '@material-ui/icons/PhotoSizeSelectActual';
 function AddPub() {
   const [userID, setUserID] = useState("");
   const [content, setContent] = useState("");
@@ -85,7 +86,10 @@ function AddPub() {
 }
   return (
     <div
-      style={{ width: "100vw", height: "100vh" }}
+      style={{ width: "100%",
+        padding:"2%",
+        background: "#E9ECEF",
+        borderRadius: "20px" }}
       className="d-flex justify-content-center align-items-center flex-column"
     >
       {error.found && (
@@ -98,16 +102,22 @@ function AddPub() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} style={{ width: "359px" }}>
+      <form onSubmit={handleSubmit} style={{ width: "400px" }}>
         <textarea
           className="textarea-pub"
           rows="4"
           cols="50"
           name="content"
           form="pubform"
+          placeholder="comment..."
           onChange={handleChange}
+          style={{ 
+            height: "62px",
+            width:"100%",
+            borderRadius: "50px",
+            padding: "3%",
+            fontSize: "20px"}}
         >
-          Comment?
         </textarea>
         <div className="progress mb-3 w-100">
           <div
@@ -121,21 +131,19 @@ function AddPub() {
             {progressPercent}
           </div>
         </div>
-        <div className="custom-file mb-3">
-          <input
-            type="file"
-            className="custom-file-input"
-            id="inputGroupFile04"
-            aria-describedby="inputGroupFileAddon04"
-            onChange={upload}
-          />
-          <label className="custom-file-label" htmlFor="inputGroupFile04">
-            Choose file
-          </label>
-        </div>
-        <button type="submit" className="btn btn-primary w-100">
+        
+        <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',}}>
+        <div class="upload-btn-wrapperp">
+ <PhotoSizeSelectActualIcon style={{color:'',height:'34px', width:'70px'}}/>
+  <input type="file" name="myfile"  aria-describedby="inputGroupFileAddon04"
+            onChange={upload}id="inputGroupFile04"/>
+</div>
+        
+        <button type="submit" className="btn btn-primary w-100" style={{height:"34px", margin:'0',width:"170px !important"}}>
           Submit
         </button>
+        </div>
+        
       </form>
       <img
         className="mt-3"

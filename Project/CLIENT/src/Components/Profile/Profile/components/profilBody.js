@@ -31,12 +31,12 @@ const ProfilBody = (props) => {
   const [isEditable, setIsEditable] = useState(false);
   const [userID, setUserID] = useState();
   const [userName, setUserName] = useState();
-  const [userPassword, setUserPassword] = useState(props.props.password);
+  const [userPassword, setUserPassword] = useState();
   const [userRole, setUserRole] = useState();
   const [userEmail, setUserEmail] = useState();
   const [userPicture, setUserPicture] = useState();
-  const [userPhone, setUserPhone] = useState(props.props.phone);
-  const [userAdress, setUserAdress] = useState(props.props.adress);
+  const [userPhone, setUserPhone] = useState();
+  const [userAdress, setUserAdress] = useState();
   const [updatedUser, setUpdatedUser] = useState({
     phone: userPhone,
     adress: userAdress,
@@ -51,18 +51,27 @@ const ProfilBody = (props) => {
     setUserRole(decoded.role);
     setUserEmail(decoded.email);
     setUserPicture(decoded.profilePicture);
-    setUpdatedUser({
-      phone: decoded.phone,
-      adress: decoded.adress,
-      password: decoded.password,
-    });
+    // setUpdatedUser({
+    //   phone: decoded.phone,
+    //   adress: decoded.adress,
+    //   password: decoded.password,
+    // });
+    props.getUser(decoded.id)
   }, []);
-
+  console.log("userphone", userPhone)
+  console.log("userInfo", props.userprofil)
   return (
-    <div className="profilBody">
+    <div style={{display:'flex', flexDirection:'column', width:"30%", position:'relative'}}>
+      <div style={{height:"300px"}}>
+        <img src="https://i.imgur.com/EASc9Xa.png" style={{height: "300px",
+    position: "absolute",
+    top: "-167px",
+    left: '-28px'}}/>
+      </div>
+ <div className="profilBody">
       <div className="col-12">
         <div className="profil-info">
-          <div className="profil-info-title">Info</div>
+          <div className="profil-info-title">User Information</div>
 
           <div className="profil-info-descreption">
             <ul className="profil-info-list">
@@ -74,15 +83,10 @@ const ProfilBody = (props) => {
                     value={userAdress}
                     onChange={(event) => {
                       setUserAdress(event.target.value);
-                      setUpdatedUser({
-                        ...updatedUser,
-                        adress: event.target.value,
-                      });
-                      props.getUser(userID);
                     }}
                   />
                 ) : (
-                  <span className="icon-descprection" style={{marginLeft:'10px'}}>{userAdress}</span>
+                  <span className="icon-descprection" style={{marginLeft:'10px'}}>{props.userprofil.adress}</span>
                 )}
               </li>
               <li className="profil-info-cordonne">
@@ -91,7 +95,7 @@ const ProfilBody = (props) => {
               </li>
               <li className="profil-info-cordonne">
                 <CakeIcon style={{ fontSize: 40 , color: "#fff" }} />{" "}
-                <span className="icon-descprection" style={{marginLeft:'10px'}}> Date de naissance</span>
+                <span className="icon-descprection" style={{marginLeft:'10px'}}>28/09/1994</span>
               </li>
               <li className="profil-info-cordonne">
                 <PhoneIphoneIcon style={{ fontSize: 40 ,  color: "#fff"}}  />
@@ -102,27 +106,23 @@ const ProfilBody = (props) => {
                     value={userPhone}
                     onChange={(event) => {
                       setUserPhone(event.target.value);
-                      setUpdatedUser({
-                        ...updatedUser,
-                        phone: event.target.value,
-                      });
                     }}
                   />
                 ) : (
-                  <span className="icon-descprection" style={{marginLeft:'10px'}}>{userPhone}</span>
+                  <span className="icon-descprection" style={{marginLeft:'10px'}}>{props.userprofil.phone}</span>
                 )}
               </li>
-              <li className="profil-info-cordonne">
+              {/* <li className="profil-info-cordonne">
                 <FacebookIcon style={{ fontSize: 40 ,  color: "#fff" }}  />
                 <span className="icon-descprection" style={{marginLeft:'10px'}}>
                   Lien de profil Facebook
                 </span>
-              </li>
-              <li className="profil-info-cordonne">
+              </li> */}
+              {/* <li className="profil-info-cordonne">
                 <InstagramIcon style={{ fontSize: 40 ,  color: "#fff" }}  />{" "}
                 <span className="icon-descprection" style={{marginLeft:'10px'}}>Lien Instagram </span>
-              </li>
-              <li className="profil-info-cordonne">
+              </li> */}
+              {/* <li className="profil-info-cordonne">
               <h6 style={{ color: "#fff"}}>Password</h6>
              
                 {isEditable ? (
@@ -141,7 +141,7 @@ const ProfilBody = (props) => {
                   <span className="icon-descprection" style={{marginLeft:'10px'}}>PAssword</span>
                 )}
            
-              </li>
+              </li> */}
             </ul>
             <center>
               {isEditable && (
@@ -164,7 +164,7 @@ const ProfilBody = (props) => {
                     className={classes.button}
                     startIcon={<SaveIcon />}
                     onClick={() => {
-                      props.updateUser(userID, updatedUser);
+                      props.updateUser(userID, {phone:userPhone,adress:userAdress});
                       setIsEditable(!isEditable);
                     }}
                   >
@@ -175,7 +175,7 @@ const ProfilBody = (props) => {
               {!isEditable && (
                 <Button
                   variant="contained"
-                  style={{backgroundColor:"#75B28E",color:"white"}}
+                  style={{backgroundColor:"#66C6BF",color:"white"}}
                   size="medium"
                   className={classes.button}
                   startIcon={<EditIcon />}
@@ -196,9 +196,11 @@ const ProfilBody = (props) => {
               
             </div> */}
     </div>
+    </div>
+   
   );
 };
 const mapStateToProps = (state) => ({
-  user: state.user.user,
+  userprofil: state.user.user,
 });
 export default connect(mapStateToProps, { updateUser, getUser })(ProfilBody);

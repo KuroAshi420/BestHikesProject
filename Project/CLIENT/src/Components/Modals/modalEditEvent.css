@@ -2,12 +2,15 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 93px;
+    top: 90px;
     left: 255px;
     right: 40px;
     bottom: 50px;
     border: 1px solid rgb(48, 6, 6);
-    background: rgba(61, 61, 61, 0.514);
+    background-image: url('https://i.imgur.com/oVKpGax.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: auto;
     border-radius: 4px;
     outline: none;

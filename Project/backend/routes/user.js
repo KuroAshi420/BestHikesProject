@@ -131,27 +131,26 @@ router.delete("/:_id", (req, res) => {
 // update user
 router.put("/update/:id", (req, res) => {
   const _id = req.params.id;
-  let { phone, adress, password } = req.body;
+  let { phone, adress } = req.body;
 
   // Code the password using bcrypt module
-  bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(password, salt, (err, hash) => {
-      password = hash;
+  // bcrypt.genSalt(10, (err, salt) => {
+  //   bcrypt.hash(password, salt, (err, hash) => {
+  //     password = hash;
       User.findOneAndUpdate(
         { _id },
         {
           $set: {
             phone,
-            adress,
-            password,
+            adress
           },
         }
       )
         .then((user) => res.send("user updated"))
         .catch((err) => console.log(err));
     });
-  });
-});
+//   });
+// });
 
 
 const uploadMulter = require('../middleware/upload')

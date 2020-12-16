@@ -22,14 +22,19 @@
 }
 .span-info{
     font-size: x-large;
-    color: purple;
+    color:  #307689;
+    text-decoration: underline;
+    font-style: italic;
 }
 .list-participant-title{
     font-size: xxx-large;
-    color: plum;
+    color: #307689;
     font-weight: 900;
     font-style: italic;
     text-align: center;
+    margin: 50px;
+    text-decoration: underline;
+    font-style: italic;
 }
 
 .container-partcipant-event{
@@ -45,4 +50,15 @@
 
 .span-info-partc{
     font-size: 20px;
+}
+
+.pdf-btn{
+    width: 200px;
+    height: 50px;
+    background-color: #307689;
+    color: white;
+    border: none;
+    font-size: 23px;
+    margin: 50px;
+    border-radius: 10px;
 }

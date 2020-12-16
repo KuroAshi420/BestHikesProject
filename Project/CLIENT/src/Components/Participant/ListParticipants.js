@@ -4,6 +4,7 @@ import { getEvents } from "../../Redux/actions/actionEvent";
 import { getUsers } from "../../Redux/actions/actionUser";
 import "./listParticipant.css"
 import GoToHome from "../BackToHome.js/GoToHome";
+import Pdf from "react-to-pdf";
 const ListParticipants = (props) => {
   const idEvent = props.match.params.Myid;
   useEffect(() => {
@@ -13,6 +14,7 @@ const ListParticipants = (props) => {
    
   }, []);
   console.log('participant table',props.event)
+ 
  
 //   const tab = props.participant.map((participant) =>
 //     props.users.filter((user) => user._id === participant.participant)
@@ -31,10 +33,14 @@ const ListParticipants = (props) => {
   
 //  }
   
-  
-
+const options = {
+  orientation: 'landscape',
+  unit: 'in',
+  format: [700,900]
+};
+const ref = React.createRef();
   return (
-    <div className="container" style={{marginTop:"5%"}}>
+    <div className="container" style={{paddingBottom:'5%',display:"flex", flexDirection:'column', alignItems:'center'}} >
       <GoToHome/>
       {/* <div
         className="custom-shadow card border-0 my-5  card-participant"
@@ -54,7 +60,11 @@ const ListParticipants = (props) => {
           ))
         )}
       </div> */}
-       <span className="list-participant-title">List Participant</span>
+      <Pdf targetRef={ref} filename="participant-list.pdf"  options={options} >
+        {({ toPdf }) => <button className="pdf-btn" onClick={toPdf}>Generate Pdf</button>}
+      </Pdf>
+      <div ref={ref}>
+      <h2 className="list-participant-title">List Participant</h2>
       <div className="container-partcipant-event">
         <div className='title-table-participant'>
         <span className="span-info">Name</span>
@@ -88,7 +98,13 @@ const ListParticipants = (props) => {
       </div>
           ))
           )}
-    </div>
+      </div>
+  
+
+      </div>
+      
+    
+  
     
   );
 };

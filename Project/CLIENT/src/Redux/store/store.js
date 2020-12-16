@@ -22,7 +22,9 @@ const rootReducer = combineReducers({
   advices: AdviceReducer,
   materiels:MaterielReducer,
   publications : PublicationReducer,
-  // participants : ParticipantReducer,
+  marque: MaterielReducer,
+  type: MaterielReducer,
+  lieux: MaterielReducer,
 });
 
 const store = createStore(

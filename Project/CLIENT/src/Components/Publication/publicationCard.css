@@ -1,7 +1,7 @@
 
 .publicationCard{
 
-    border: 0.5px solid #76B38F;
+    border: 0.5px solid #5DB0D0;
     /* background-color: #E9EBEE; */
     margin-bottom: 3%;
     width: 560px;
@@ -57,7 +57,7 @@ width: 100%;
 }
 .pub-comment{
     margin: 0 5%;
-    border-top: 0.5px solid #76B38F; 
+    border-top: 0.5px solid #5DB0D0; 
 }
 .comment-user-image-container{
 

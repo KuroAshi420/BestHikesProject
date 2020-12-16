@@ -78,8 +78,8 @@ console.log("publication",publication)
     return (
      
         
-           <div className="ui card" style={{width:'400px'}}>
-        <div className="content" style={{backgroundColor:"#76B38F", color:"#fff"}}>
+           <div className="ui card" style={{width:'500px', marginBottom:"30px"}}>
+        <div className="content" style={{backgroundColor:"#307689", color:"#fff"}}>
           <div className="right floated meta">
             <AddShoppingCartIcon onClick={() => {
                     if (isAuthenticated && role === "participant") {
@@ -95,7 +95,7 @@ console.log("publication",publication)
                       history.push('/login')
                     }
                   }} 
-            style={{ color: "red",cursor: "pointer", fontSize: '35px'}}/>
+            style={{ color: "rgb(141 255 247)",cursor: "pointer", fontSize: '35px'}}/>
             <Confirm
                 content="Are you sure ? This operation is ireverrsible !!!"
                   style={{height: "20%",
@@ -122,14 +122,14 @@ console.log("publication",publication)
                  <div className="col-md-12">
             <p style={{fontSize:"3vh"}}>{props.event.desc}</p>
             <ul style={{listStyle:"none",padding: '0',float: 'left',textAlign: 'justify'}}>
-              <li style={{fontSize:"3vh"}}> <span style={{color:"#009688"}}  >Organisator :</span>  {props.event.organisator}</li>
+              <li style={{fontSize:"3vh"}}> <span style={{color:"#5DB0D0"}}  >Organisator :</span>  {props.event.organisator}</li>
               <li style={{fontSize:"3vh"}}>
-              <span style={{color:"#009688"}}> From</span>  {props.event.depart} <span style={{color:"#009688"}}> To</span>{" "}
+              <span style={{color:"#5DB0D0"}}> From</span>  {props.event.depart} <span style={{color:"#5DB0D0"}}> To</span>{" "}
                 {props.event.destination}{" "}
               </li>
-              <li style={{fontSize:"3vh"}}><span style={{ color:'#009688'}}>Date :</span> {props.event.date}</li>
-              <li style={{fontSize:"3vh"}}><span style={{color:"#009688"}}>Disponible Places :</span> {props.event.places}</li>
-              <li style={{fontSize:"3vh"}}><span style={{color:"#009688"}}>Price : </span>{props.event.price}</li>
+              <li style={{fontSize:"3vh"}}><span style={{ color:'#5DB0D0'}}>Date :</span> {props.event.date}</li>
+              <li style={{fontSize:"3vh"}}><span style={{color:"#5DB0D0"}}>Disponible Places :</span> {props.event.places}</li>
+              <li style={{fontSize:"3vh"}}><span style={{color:"#5DB0D0"}}>Price : </span>{props.event.price} DT</li>
             </ul>
             </div>
          
@@ -145,8 +145,9 @@ console.log("publication",publication)
                  size="small"
                  aria-label="delete"
                  onClick={() => props.deleteEvent(props.event._id)}
+                 style={{backgroundColor:"#5DB0D0"}}
              >
-               <DeleteIcon />
+               <DeleteIcon color="#254552" />
              </Fab>
          </div>
          )}

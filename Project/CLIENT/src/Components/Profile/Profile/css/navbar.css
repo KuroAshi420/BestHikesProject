@@ -5,7 +5,9 @@
   margin:5% 5%;
   border-top: 4px solid #eee;
   border-bottom: 4px solid #eee;
-  background-color: #76B38F;
+  background-color: #307689;
+  width: 80%;
+  margin-left: 14%;
 }
 
 .navbar-profil-left {
@@ -13,7 +15,7 @@
   flex-direction: row;
   justify-content: space-around;
   width: 55%;
-  font-size: 24px;
+  font-size: 20px;
   align-items: center;
 }
 .navbar-profil-right {

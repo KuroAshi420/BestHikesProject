@@ -75,3 +75,40 @@ exports.updateDisponible = (req, res) => {
       .then((materiel) => res.json(materiel))
       .catch((err) => res.json(err));
   };
+
+
+exports.getMaterielType = (req, res) => {
+  Materiel.find(null, { type: 1 })
+    .distinct("type")
+    .then((mat) => res.send(mat))
+    .catch((err) => console.log(err));
+};
+
+
+exports.getMaterielMarque = (req, res) => {
+  Materiel.find(null, { marque: 1 })
+    .then((mat) => res.send(mat))
+    .catch((err) => console.log(err));
+};
+
+exports.getMaterielLieu = (req, res) => {
+  Materiel.find(null, { lieux: 1 })
+    .distinct("lieux")
+    .then((mat) => res.send(mat))
+    .catch((err) => console.log(err));
+};
+
+
+exports.filterMateriels = (req, res) => {
+  var query = req.params.query;
+
+  Materiel.find({
+    $or: [
+      { type: query },
+      { marque: query },
+      { lieux: query },
+    ],
+  })
+    .then((materiel) => res.send(materiel))
+    .catch((err) => console.log(err));
+};

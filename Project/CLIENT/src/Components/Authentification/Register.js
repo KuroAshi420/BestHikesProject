@@ -37,13 +37,13 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage:
-      "url(https://i.imgur.com/GzA0I4c.png)",
+      "url(https://i.imgur.com/2hXfN2a.png)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
         ? theme.palette.grey[50]
         : theme.palette.grey[900],
-    backgroundSize: "cover",
+    backgroundSize: "contain",
     backgroundPosition: "center",
   },
   paper: {

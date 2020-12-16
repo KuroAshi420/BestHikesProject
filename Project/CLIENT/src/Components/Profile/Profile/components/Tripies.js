@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import '../css/notification.css'
 import PublicationCard from "../../../Publication/publicationCard";
+import AddPub from "../../../Publication/AddPublication";
 
 
 const Pub = (props) => {
@@ -37,13 +38,19 @@ const Pub = (props) => {
  console.log('kkk',pub)
 
     return (
-        <div className="container-notification ">
+      <div className="contcpnt">
+        <AddPub/>
+         <div className="container-notification ">
+
+        
         {pub.map((pub) => (
               <PublicationCard key={pub._id} pub={pub} />
             ))}
                   
                 
             </div>
+      </div>
+       
        
     )
 }

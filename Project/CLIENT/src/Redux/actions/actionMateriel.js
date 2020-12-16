@@ -1,4 +1,4 @@
-import { GET_MATERIERLS, GET_MATERIERL } from "./actionTypes";
+import { GET_MATERIERLS, GET_MATERIERL, GET_MATERIERLTYPE, GET_MATERIERLMARQUE, GET_MATERIERLLIEUX } from "./actionTypes";
 import axios from "axios";
 
 export const getmateriels =  () => async (dispatch) => {
@@ -37,3 +37,30 @@ export const updateDispo = (id, dispo) => (dispatch) => {
 };
 
 
+export const getMaterielType =  () => async (dispatch) => {
+  await axios
+    .get("http://localhost:5000/materiel/getType")
+    .then((res) => dispatch({ type: GET_MATERIERLTYPE, payload: res.data }))
+    .catch((err) => console.log(err));
+};
+
+export const getMaterielMarque =  () => async (dispatch) => {
+  await axios
+    .get("http://localhost:5000/materiel/getMarque")
+    .then((res) => dispatch({ type: GET_MATERIERLMARQUE, payload: res.data }))
+    .catch((err) => console.log(err));
+};
+
+export const getMaterielLieux =  () => async (dispatch) => {
+  await axios
+    .get("http://localhost:5000/materiel/getLieux")
+    .then((res) => dispatch({ type: GET_MATERIERLLIEUX, payload: res.data }))
+    .catch((err) => console.log(err));
+};
+
+export const filterMateriel =  (index) => async (dispatch) => {
+  await axios
+    .get(`http://localhost:5000/materiel/findMateriel/${index}`)
+    .then((res) => dispatch({ type: GET_MATERIERLS, payload: res.data }))
+    .catch((err) => console.log(err));
+};

@@ -88,7 +88,7 @@ console.log('togle', togle.checkedA)
               {props.materiel.type}
             </h2>
           }
-          style={{backgroundColor:'#76B38F'}}
+          style={{backgroundColor:'#307689'}}
         />
 
         <img src={`http://localhost:5000/${props.materiel.image}`} alt="img" style={{width:'100%'}}/>
@@ -109,7 +109,7 @@ console.log('togle', togle.checkedA)
             <div>
               <a style={{ cursor: "pointer" }}  onClick={() => props.deleteMateriel(props.materiel._id)}>
                 <DeleteForeverIcon
-                  style={{ fontSize: "40px", color: "#76B38F" }}
+                  style={{ fontSize: "40px", color: "#307689" }}
                 />
               </a>
               <FormControlLabel
@@ -118,7 +118,7 @@ console.log('togle', togle.checkedA)
                     checked={togle.checkedA}
                     onChange={handleChange}
                     name="checkedA"
-                    color="#76B38F"
+                    color="#307689"
                   />
                 }
                 label="disponible"
@@ -132,7 +132,7 @@ console.log('togle', togle.checkedA)
             onClick={handleExpandClick}
             aria-expanded={expanded}
             aria-label="show more"
-            style={{ background: "#76B38F", color: "white" }}
+            style={{ background: "#307689", color: "white" }}
           >
             <ExpandMoreIcon />
           </IconButton>
@@ -141,20 +141,32 @@ console.log('togle', togle.checkedA)
           <CardContent>
             <Typography paragraph>
               {" "}
-              <h2 style={{ color: "rgb(0, 150, 136)" }}>Descreption</h2>
+              <h2 style={{ color: "#307689" }}>Descreption</h2>
             </Typography>
             <Typography paragraph>
               <p style={{ fontSize: "17px" }}>{props.materiel.descreption}</p>
             </Typography>
             <Typography paragraph>
-              <h3 style={{ color: "rgb(0, 150, 136)" }}>Marque</h3>{" "}
-              <p style={{ fontSize: "17px" }}>{props.materiel.marque}</p>
-              <h3 style={{ color: "rgb(0, 150, 136)" }}>Price</h3>{" "}
+              <div style={{display:'flex', flexDirection:"row",alignItems:"center",justifyContent:"space-between",margin:'1% 4% 1% 4%'}}>
+              <h3 style={{ color: "#307689" }}>Marque</h3>
+              <p style={{ fontSize: "17px" }}>{ props.materiel.marque}</p>
+              </div>
+              <div style={{display:'flex', flexDirection:"row",alignItems:"center",justifyContent:"space-between", margin:'1% 4% 1% 4%'}}>
+              <h3 style={{ color: "#307689" }}>Price</h3>
               <p style={{ fontSize: "17px" }}>{props.materiel.price}</p>
-              <h3 style={{ color: "rgb(0, 150, 136)" }}>Quantity</h3>{" "}
+              </div>
+              <div style={{display:'flex', flexDirection:"row",alignItems:"center",justifyContent:"space-between",margin:'1% 4% 1% 4%'}}>
+              <h3 style={{ color: "#307689" }}>Quantity</h3>{" "}
               <p style={{ fontSize: "17px" }}>{props.materiel.quantity}</p>
-              <h3 style={{ color: "rgb(0, 150, 136)" }}>Location</h3>{" "}
+              </div>
+              <div style={{display:'flex', flexDirection:"row",alignItems:"center",justifyContent:"space-between",margin:'1% 4% 1% 4%'}}>
+              <h3 style={{ color: "#307689" }}>Location</h3>{" "}
               <p style={{ fontSize: "17px" }}> {props.materiel.lieux}</p>
+              </div>
+              <div style={{display:'flex', flexDirection:"row",alignItems:"center",justifyContent:"space-between", margin:'1% 4% 1% 4%'}} >
+              <h3 style={{ color: "#307689" }}>Contact</h3>{" "}
+              <p style={{ fontSize: "17px" }}> +216 23353662</p>
+              </div>
             </Typography>
           </CardContent>
         </Collapse>

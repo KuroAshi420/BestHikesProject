@@ -3,6 +3,8 @@ import axios from "axios";
 import jwt_decode from 'jwt-decode'
 import { addMateriel } from "../../Redux/actions/actionMateriel";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
+import TextField from '@material-ui/core/TextField';
+
 import { connect } from "react-redux";
 import "./AddMateriel.css"
 function AddMateriell(props) {
@@ -49,7 +51,8 @@ function AddMateriell(props) {
       data.append("categoryImage", files[0]);
       data.append("name", files[0].name);
       data.append("type",type);
-      data.append("marque",price);
+      data.append("marque",marque);
+      data.append("price",price);
       data.append("quantity",quantity);
       data.append("lieux",lieux);
       data.append("descreption",descreption);
@@ -66,6 +69,7 @@ function AddMateriell(props) {
         name: "",
         type,
         price,
+        marque,
         quantity,
         lieux,
         descreption,
@@ -105,64 +109,75 @@ function AddMateriell(props) {
         });
     };
     return (
-        <div className="add-materiel">
-           <form onSubmit={handleSubmit} style={{ width: "359px" }}>
+
+    <div className="container-fluid" style={{display:'flex',}}>
+<div className="add-mat-backg">
+
+</div>
+<div className="add-materiel">
+           <form onSubmit={handleSubmit} style={{   display: "flex",
+    width: "40%",
+    height: "100%",
+    flexDirection: "column",
+    justifyContent:"space-between" }}>
         <h2 className="add-materiel-title">ADD Materiel</h2>
-        <br />
-        <label className="add-materiel-labes">Type</label>
-        <TextareaAutosize
+       
+        <div className="input-form-container">
+        <TextField id="standard-basic" label="add type ..."
           className="input-materiel"
-          aria-label="empty textarea"
-          placeholder="add type..."
+          fullWidth
           value={type}
           onChange={(e) => setType(e.target.value)}
         />
-        <br />
-        <label className="add-materiel-labes">Marque</label>
-        <TextareaAutosize
+        
+        </div>
+        
+        <div className="input-form-container">
+        <TextField
           className="input-materiel"
-          aria-label="empty textarea"
-          placeholder="add marque..."
+          label="add marque..."
           value={marque}
           onChange={(e) => setMarque(e.target.value)}
         />
-        <br />
-        <label className="add-materiel-labes">Price</label>
-        <TextareaAutosize
+</div>
+        
+      <div className="input-form-container">
+        <TextField
           className="input-materiel"
-          aria-label="empty textarea"
-          placeholder="add price..."
+          label="add price..."
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
-        <br />
-        <label className="add-materiel-labes">Quantity</label>
-        <TextareaAutosize
+</div>
+   
+      <div className="input-form-container">
+        <TextField
           className="input-materiel"
-          aria-label="empty textarea"
-          placeholder="add quantity..."
+          label="add quantity..."
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
         />
-        <br />
-        <label className="add-materiel-labes">Location</label>
-        <TextareaAutosize
+</div>
+        
+       <div className="input-form-container">
+        <TextField
           className="input-materiel"
-          aria-label="empty textarea"
-          placeholder="add location..."
+          label="add location..."
           value={lieux}
           onChange={(e) => setLieux(e.target.value)}
         />
-        <br />
-        <label className="add-materiel-labes">Descreption</label>
-        <TextareaAutosize
+</div>
+       
+        <div className="input-form-container">
+        <TextField
           className="input-materiel"
-          aria-label="empty textarea"
-          placeholder="add descreption..."
+          label="add descreption..."
           value={descreption}
           onChange={(e) => setDescreption(e.target.value)}
         />
-        <br />
+</div>
+       
+     
         <label className="add-materiel-labes">Add Picture</label>
         <div className="progress mb-3 w-100">
           <div
@@ -194,6 +209,11 @@ function AddMateriell(props) {
       </form>
       
         </div>
+        <div className="add-mat-backg">
+
+</div>
+    </div>
+        
     )
 }
 

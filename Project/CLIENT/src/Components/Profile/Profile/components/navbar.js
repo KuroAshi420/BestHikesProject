@@ -5,7 +5,12 @@ import ChatIcon from "@material-ui/icons/Chat";
 
 const NavBar = () => {
   return (
-    <div className="navbar-profil">
+    <div style={{position:'relative'}}>
+      <div style={{position:'absolute',top: "-96px",
+    right: "100px"}}>
+        <img src="https://i.imgur.com/bfE5EHE.png" style={{width:"150px"}}/>
+      </div>
+ <div className="navbar-profil">
       <div className="navbar-profil-left">
         <a className="navbar-profil-link" href="/acceuil">
           Home
@@ -16,9 +21,9 @@ const NavBar = () => {
         <a className="navbar-profil-link" href="/allMateriels">
          comping materials
         </a>
-        <a className="navbar-profil-link" href="/photos">
+        {/* <a className="navbar-profil-link" href="/photos">
           Photos
-        </a>
+        </a> */}
         <a className="navbar-profil-link" href="/videos">
           Videos
         </a>
@@ -36,6 +41,8 @@ const NavBar = () => {
         <button className="navbar-profil-btn" style={{color:"#eee"}}>...</button>
       </div>
     </div>
+    </div>
+   
   );
 };
 

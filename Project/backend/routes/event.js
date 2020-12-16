@@ -70,7 +70,7 @@ router.get("/filterDepart", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-// get All destination
+// get All dates
 router.get("/filterDate", (req, res) => {
   Event.find(null, { date: 1 })
     .distinct("date")

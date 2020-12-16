@@ -3,7 +3,7 @@ import CardMateril from "../../../materiels/materielCard";
 import { getmateriels } from "../../../../Redux/actions/actionMateriel";
 import { connect } from "react-redux";
 import jwt_decode from "jwt-decode";
-
+import SearchMateriel from '../../../Search/serachMatriel'
 import '../css/notification.css'
 
 const Materiel = (props) => {
@@ -25,11 +25,11 @@ const Materiel = (props) => {
   }, [localStorage.getItem("token")]);
     return (
         <div className="container-notification ">
-        {props.materiels.map((materiel) => (
+        {/* {props.materiels.map((materiel) => (
               <CardMateril key={materiel._id} materiel={materiel} />
-            ))}
+            ))} */}
                   
-                
+                <SearchMateriel/>
             </div>
        
     )

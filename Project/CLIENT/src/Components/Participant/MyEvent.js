@@ -21,6 +21,7 @@ const MyEvent = (props) => {
         justifyContent: "space-around",
         marginTop: "3%",
         alignItems: "center",
+    
       }}
     >
       <div>
@@ -53,6 +54,7 @@ const MyEvent = (props) => {
           size="small"
           className={classes.button}
           onClick={() => history.push(`/MyEvents/${props.eventss._id}`)}
+          style={{backgroundColor:"#5DB0D0"}}
         >
           Get participants
         </Button>

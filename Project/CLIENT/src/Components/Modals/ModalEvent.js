@@ -88,11 +88,11 @@ const ModalAddEdit = (props) => {
     <div>
       <Fab
         size="small"
-        color={props.add ? "primary" : "secondary"}
+        color={props.add ? "primary" : "primary"}
         aria-label={props.add ? "add" : "edit"}
         onClick={() => setModalIsOpen(true)}
       >
-        {props.add ? <AddIcon /> : <EditIcon />}
+        {props.add ? <AddIcon/> : <EditIcon/>}
       </Fab>
       <Modal
         isOpen={modalIsOpen}
@@ -100,8 +100,10 @@ const ModalAddEdit = (props) => {
         className="myModal"
         contentLabel="Example Modal"
       >
-        <label htmlFor="fname" style={{color:"white"}}>Event Title</label>
+        <label htmlFor="fname" style={{color:"#C82333"}}>Event Title</label>
         <input
+        style={{fontSize: "20px",
+          border:"#397B8C 3px solid"}}
           type="text"
           value={props.add ? title : updatedEvent.title}
           onChange={(e) =>
@@ -110,15 +112,19 @@ const ModalAddEdit = (props) => {
               : setUpdatedEvent({ ...updatedEvent, title: e.target.value })
           }
         />
-        <label htmlFor="fname" style={{color:"white"}}>Event Organisator</label>
+        <label htmlFor="fname" style={{color:"#C82333"}}>Event Organisator</label>
         {props.add ? (
           <input
+          style={{fontSize: "20px",
+          border:"#397B8C 3px solid"}}
             type="text"
             placeholder={organisatorName}
             onChange={(e) => setOrganisator(e.target.value)}
           />
         ) : (
           <input
+          style={{fontSize: "20px",
+          border:"#397B8C 3px solid"}}
             type="text"
             value={organisatorName}
             onChange={(e) =>
@@ -129,8 +135,10 @@ const ModalAddEdit = (props) => {
             }
           />
         )}
-        <label htmlFor="fname" style={{color:"white"}}>Event Price</label>
+        <label htmlFor="fname" style={{color:"#C82333"}}>Event Price</label>
         <input
+         style={{fontSize: "20px",
+         border:"#397B8C 3px solid"}}
           type="text"
           value={props.add ? price : updatedEvent.price}
           onChange={(e) =>
@@ -139,9 +147,11 @@ const ModalAddEdit = (props) => {
               : setUpdatedEvent({ ...updatedEvent, price: e.target.value })
           }
         />
-        <label htmlFor="fname" style={{color:"white"}}>Event Depart</label>
+        <label htmlFor="fname" style={{color:"#C82333"}}>Event Depart</label>
         <input
           type="text"
+          style={{fontSize: "20px",
+          border:"#397B8C 3px solid"}}
           value={props.add ? depart : updatedEvent.depart}
           onChange={(e) =>
             props.add
@@ -149,8 +159,10 @@ const ModalAddEdit = (props) => {
               : setUpdatedEvent({ ...updatedEvent, depart: e.target.value })
           }
         />
-        <label htmlFor="fname" style={{color:"white"}}>Event Destination</label>
+        <label htmlFor="fname" style={{color:"#C82333"}}>Event Destination</label>
         <input
+         style={{fontSize: "20px",
+         border:"#397B8C 3px solid"}}
           type="text"
           value={props.add ? destination : updatedEvent.destination}
           onChange={(e) =>
@@ -162,7 +174,7 @@ const ModalAddEdit = (props) => {
                 })
           }
         />
-        <label htmlFor="fname" style={{color:"white"}}>Event Date</label>
+        <label htmlFor="fname" style={{color:"#C82333"}}>Event Date</label>
         {/* <form className={classes.container} noValidate> */}
         <TextField
           id="date"
@@ -179,8 +191,10 @@ const ModalAddEdit = (props) => {
             shrink: true,
           }}
         />
-        <label htmlFor="fname" style={{color:"white"}}>Event Cover</label>
+        <label htmlFor="fname" style={{color:"#C82333"}}>Event Cover</label>
         <input
+         style={{fontSize: "20px",
+         border:"#397B8C 3px solid"}}
           type="text"
           value={props.add ? cover : updatedEvent.cover}
           onChange={(e) =>
@@ -209,7 +223,7 @@ const ModalAddEdit = (props) => {
               : setUpdatedEvent({ ...updatedEvent, dislike: e.target.value })
           }
         /> */}
-        <label htmlFor="fname" style={{color:"white"}}>Event Description</label>
+        <label htmlFor="fname" style={{color:"#C82333"}}>Event Description</label>
         <input
           type="text"
           value={props.add ? desc : updatedEvent.desc}
@@ -219,7 +233,7 @@ const ModalAddEdit = (props) => {
               : setUpdatedEvent({ ...updatedEvent, desc: e.target.value })
           }
         />
-        <label htmlFor="fname">Event Places</label>
+        <label htmlFor="fname" style={{color:"#C82333"}}>Event Places</label>
         <input
           type="text"
           value={props.add ? places : updatedEvent.places}

@@ -26,11 +26,17 @@ const ListMyEvents = (props) => {
     props.filterEvents(organisatorName);
   };
   return (
-    <div className="container">
-      <div className="card border-0 shadow my-5" style={{padding:"2%"}}>
+    <div style={{minHeight:'100vh',     backgroundImage:"url(https://i.imgur.com/k8VfgjW.jpg)",
+    backgroundSize:"cover",
+    backgroundPosition:'center',
+    backgroundRepeat:"",
+    display:'flex',
+    alignItems:'center'}}>
+<div className="container">
+      <div className="card border-0 shadow my-5" style={{padding:"2%", margin:'0 !important'}}>
         <div className="row">
           <center className="col-sm-12 col-md-12 col-md-offset-1">
-            <Button inverted color="red" onClick={(e)=>handleSubmit(e)}>
+            <Button inverted style={{backgroundColor:"#5DB0D0"}} onClick={(e)=>handleSubmit(e)}>
               Get My Events
             </Button>
             <center >
@@ -55,6 +61,8 @@ const ListMyEvents = (props) => {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 };
 const mapStateToProps = (state) => ({

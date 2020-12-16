@@ -25,3 +25,8 @@ code {
 /* button{
   width: 80%;
 } */
+.mother-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
